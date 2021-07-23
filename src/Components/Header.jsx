@@ -12,7 +12,7 @@ const Header = styled.header`
 
     .header-content {
         width: 100%;
-        max-width: 900px;
+        max-width: 800px;
         display: flex;
         justify-content: space-between;
         margin-top: 35px;
