@@ -10,11 +10,14 @@ const Wrapper = styled.div`
 
   display: flex;
   justify-content: space-around;
+
+  height: 180px;
+  background: hsl(225, 100%, 98%);
 `;
 
 const FollowersList = styled.section`
   position: absolute;
-  top: 150px;
+  top: 130px;
 
   display: flex;
   gap: 30px;
@@ -36,12 +39,13 @@ function App() {
               profile,
               followersNumber,
               statistics
-            }) =>  <Card 
-            key={id} 
-            media={media} 
-            profile={profile} 
-            followersNumber={followersNumber} 
-            statistics={statistics} /> )
+            }) => <Card 
+                    key={id} 
+                    media={media} 
+                    profile={profile} 
+                    followersNumber={followersNumber} 
+                    statistics={statistics} /> 
+            )
           }
         </FollowersList>
       </Wrapper>
