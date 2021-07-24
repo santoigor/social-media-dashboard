@@ -6,6 +6,7 @@ const Header = styled.header`
     justify-content: center;
     align-items:  flex-start;
     width: 100%;
+    padding: 20px;
 
     .header-content {
         width: 100%;
