@@ -21,6 +21,7 @@ const Title = styled.h1`
     font-size: 20px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
+    color: ${({theme}) => theme.primaryTextColor}
 `;
 const NumberFollowers = styled.p`
     font-family: 'Inter', sans-serif;

@@ -5,22 +5,31 @@ import twitterIcon from '../Assets/icon-twitter.svg';
 import youtubeIcon from '../Assets/icon-youtube.svg';
 import upIcon from '../Assets/icon-up.svg';
 import downIcon from '../Assets/icon-down.svg';
+import { 
+        limeGreen, 
+        brightRed,
+        facebookColor,
+        twitterColor,
+        instagramColor,
+        youtubeColor,
+        grayText
+    } from '../UI/Variables'
 
 const mediaReferences = {
     facebook: { 
-        color: "hsl(208, 92%, 53%)",
+        color: facebookColor,
         icon: facebookIcon,
     },
     twitter: {
-        color: "hsl(203, 89%, 53%)",
+        color: twitterColor,
         icon: twitterIcon
     },
     instagram:{  
-        color: "linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%))",
+        color: instagramColor,
         icon: instagramIcon
     },
     youtube: { 
-        color: "hsl(348, 97%, 39%)",
+        color: youtubeColor,
         icon: youtubeIcon
     }
 };
@@ -36,8 +45,9 @@ const Card = styled.div`
     border: 0;
     border-radius: 5px;
 
-    background: hsl(227, 47%, 96%);
+    background: ${({theme}) => theme.cardBackground};
     width: 180px;
+    cursor: pointer;
 
     .card-content {
         padding: 20px;
@@ -49,7 +59,12 @@ const Card = styled.div`
             display: flex;
             gap: 10px;
             font-size: 12px;
+            color: ${grayText};
         }
+    }
+
+    &:hover {
+        filter: brightness(0.9);
     }
 `;
 const FollowersData = styled.div`
@@ -60,12 +75,13 @@ const FollowersData = styled.div`
 
     .number {
         font: 700 45px 'Inter', sans-serif;
+        color:  ${({theme}) => theme.primaryTextColor};
     }
 
     .followers {
         font-size: 10px;
         letter-spacing: 2px;
-        color: hsl(228, 12%, 44%);
+        color: ${grayText};
     }
 `;
 const Statistic = styled.div`
@@ -74,7 +90,7 @@ const Statistic = styled.div`
     gap: 5px;
     font-size: 10px;
 
-    color: ${({diff}) => diff === 'up'? 'hsl(163, 72%, 41%)' : 'hsl(356, 69%, 56%)'};
+    color: ${({diff}) => diff === 'up'? limeGreen : brightRed};
 `;
 
 export default ({

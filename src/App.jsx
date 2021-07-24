@@ -1,8 +1,11 @@
 import Card from "./Components/Card";
 import Header from "./Components/Header";
+import { dark, light } from "./UI/Themes"
 
 import { GlobalStyle } from "./UI/GlobalStyle";
+import { ThemeProvider } from "styled-components";
 import styled from 'styled-components'
+
 import { info } from "./Data";
 
 const Wrapper = styled.div`
@@ -13,7 +16,8 @@ const Wrapper = styled.div`
   
 
   height: 180px;
-  background: hsl(225, 100%, 98%);
+  /* background: hsl(225, 100%, 98%); */
+  background: ${({theme}) => theme.headerBackground};
 `;
 
 const FollowersList = styled.section`
@@ -41,9 +45,8 @@ const Overview = styled.div`
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={dark}>
       <GlobalStyle />
-     
       <Wrapper>
         <Header />
         <FollowersList>
@@ -71,7 +74,7 @@ function App() {
         </Overview>
 
       
-      </>
+      </ThemeProvider>
   );
 }
 

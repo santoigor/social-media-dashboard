@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { toggleBackgroundGray, toggleBackgroundGradient, grayText } from '../UI/Variables';
 
 const Toggle = styled.div`
     display: flex;
@@ -26,7 +27,7 @@ const Toggle = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        background-color:hsl(230, 22%, 74%);
+        background-color: ${toggleBackgroundGray};
         -webkit-trasition: .4s;
         transition: .4s;
     }
@@ -45,12 +46,12 @@ const Toggle = styled.div`
     }
 
     input:checked + .slider {
-        background:  hsl(210, 78%, 56%);
-        background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        /* background:  hsl(210, 78%, 56%); */
+        background: ${toggleBackgroundGradient};
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+        box-shadow: 0 0 1px  ${toggleBackgroundGradient};
     }
 
     input:checked + .slider:before {
@@ -72,7 +73,7 @@ const NumberFollowers = styled.p`
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    color: hsl(228, 12%, 44%);
+    color: ${grayText};
 `;
 export default () => (
     <Toggle>
