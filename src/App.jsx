@@ -60,7 +60,7 @@ function App() {
   return (
     <ThemeProvider theme={isThemeDark ? dark : light}>
       <GlobalStyle />
-      {/* <Wrapper>
+      <Wrapper>
         <Header>
           <Toggle onClick={ () => setIsThemeDark(!isThemeDark)} isDark={isThemeDark} />
         </Header>
@@ -81,21 +81,22 @@ function App() {
             )
           }
         </FollowersList>
-      </Wrapper> */}
+      </Wrapper>
           
       <Overview>
-          {/* <Subtitle>Overview - Today</Subtitle> */}
+          <Subtitle>Overview - Today</Subtitle>
           <div className="overview-content">
-            <OverviewCard />
             { overviewInfo.data.map(({
               title, 
               social_media, 
               number, 
-              percentage}) => <OverviewCard 
+              percentage}) => {
+              console.log(title, social_media);
+              return <OverviewCard 
                                 title={title} 
                                 social_media={social_media} 
                                 percentage={percentage} 
-                                number={number} />
+                                number={number} />}
               )
             }
           </div>

@@ -119,15 +119,16 @@ export const overviewInfo = {
                 diference: 'down'
             }
         },
-        // {
-        //     id: '8',
-        //     title: "Total Views",
-        //     social_media: 'youtube',
-        //     number: '1407',
-        //     percentage: {
-        //         percent: '12%',
-        //         diference: 'down'
-        //     }
-        // },
+        {
+            id: '8',
+            title: "Total Views",
+            social_media: 'youtube',
+            number: '1407',
+            percentage: {
+                percent: '12%',
+                diference: 'down'
+            }
+        },
     ]
 }
+

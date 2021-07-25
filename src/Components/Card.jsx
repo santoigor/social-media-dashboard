@@ -6,11 +6,9 @@ import youtubeIcon from '../Assets/icon-youtube.svg';
 import upIcon from '../Assets/icon-up.svg';
 import downIcon from '../Assets/icon-down.svg';
 
-import { SmallGrayText } from '../UI/Container'
+import { SmallGrayText, Statistic, SocialMediaNumber } from '../UI/Container'
 
 import { 
-        limeGreen, 
-        brightRed,
         facebookColor,
         twitterColor,
         instagramColor,
@@ -76,25 +74,13 @@ const FollowersData = styled.div`
     flex-direction: column;
     margin: 10px 0 16px 0;
 
-    .number {
-        font: 700 45px 'Inter', sans-serif;
-        color:  ${({theme}) => theme.primaryTextColor};
-    }
-
     .followers {
         font-size: 10px;
         letter-spacing: 2px;
         color: ${grayText};
     }
 `;
-const Statistic = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 10px;
 
-    color: ${({diff}) => diff === 'up'? limeGreen : brightRed};
-`;
 
 export default ({
     media,
@@ -112,7 +98,7 @@ export default ({
                 <SmallGrayText>{profile}</SmallGrayText>
             </div>
             <FollowersData>
-                <p className="number">{followersNumber}</p>
+                <SocialMediaNumber className="number">{followersNumber}</SocialMediaNumber>
                 <p className="followers">FOLLOWERS</p>
             </FollowersData>
             <Statistic diff={statistics.diference}>
