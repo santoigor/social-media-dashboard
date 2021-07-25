@@ -1,5 +1,7 @@
 import Card from "./Components/Card";
 import Header from "./Components/Header";
+import  Toggle from "./Components/Toggle";
+import OverviewCard from "./Components/OverviewCard";
 import { dark, light } from "./UI/Themes"
 
 import { GlobalStyle } from "./UI/GlobalStyle";
@@ -7,6 +9,7 @@ import { ThemeProvider } from "styled-components";
 import styled from 'styled-components'
 
 import { info } from "./Data";
+import { useState } from "react";
 
 const Wrapper = styled.div`
   position: relative;
@@ -44,11 +47,14 @@ const Overview = styled.div`
 `;
 
 function App() {
+  const [ isThemeDark, setIsThemeDark ] = useState(false);
   return (
-    <ThemeProvider theme={dark}>
+    <ThemeProvider theme={isThemeDark ? dark : light}>
       <GlobalStyle />
       <Wrapper>
-        <Header />
+        <Header>
+          <Toggle onClick={ () => setIsThemeDark(!isThemeDark)} isDark={isThemeDark} />
+        </Header>
         <FollowersList>
           {
             info.data.map(({
@@ -70,7 +76,7 @@ function App() {
           
       <Overview>
           <Subtitle>Overview - Today</Subtitle>
-
+          <OverviewCard />
         </Overview>
 
       

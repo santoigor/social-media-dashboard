@@ -4,7 +4,7 @@ export const dark = {
     cardBackground: "hsl(228, 28%, 20%)",
     hoverColor: "hsl(228, 34%, 66%)",
     primaryTextColor: "hsl(0, 0%, 100%)",
-    toggleColor: "linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))"
+   
 };
 
 export const light = { 
@@ -14,5 +14,4 @@ export const light = {
     cardBackground: "hsl(227, 47%, 96%)",
     hoverColor: "hsl(228, 12%, 44%)",
     primaryTextColor: "hsl(230, 17%, 14%)",
-    toggleColor: "linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))"
 };

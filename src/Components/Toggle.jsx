@@ -40,13 +40,12 @@ const Toggle = styled.div`
         left: 2px;
         bottom: 3px;
 
-        background-color: white;
+        background-color: ${ ({isDark, theme })=> isDark ? theme.headerBackground : 'white'};
         -webkit-transition: .4s;
         transition: .4s;
     }
 
     input:checked + .slider {
-        /* background:  hsl(210, 78%, 56%); */
         background: ${toggleBackgroundGradient};
     }
 
@@ -71,15 +70,15 @@ const Toggle = styled.div`
 
 const NumberFollowers = styled.p`
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
-    color: ${grayText};
+    color: ${({isDark, theme}) => isDark ?  theme.primaryTextColor : grayText};
 `;
-export default () => (
-    <Toggle>
-        <NumberFollowers>Dark mode</NumberFollowers>
+export default ({isDark, ...rest}) => (
+    <Toggle isDark={isDark}>
+        <NumberFollowers isDark={isDark}>Dark mode</NumberFollowers>
         <label className="switch">
-            <input type="checkbox"/>
+            <input type="checkbox" {...rest}/>
             <span className="slider round"></span>
         </label>
     </Toggle>

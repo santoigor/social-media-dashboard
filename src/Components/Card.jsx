@@ -65,7 +65,7 @@ const Card = styled.div`
 
     &:hover {
         filter: brightness(0.9);
-    }
+    };
 `;
 const FollowersData = styled.div`
     display: flex;

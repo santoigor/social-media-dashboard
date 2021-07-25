@@ -10,6 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: hsl(0, 0%, 100%);
+        background: ${({theme}) => theme.bodyBackground};
     }
 `;
