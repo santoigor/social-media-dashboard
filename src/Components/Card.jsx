@@ -5,6 +5,9 @@ import twitterIcon from '../Assets/icon-twitter.svg';
 import youtubeIcon from '../Assets/icon-youtube.svg';
 import upIcon from '../Assets/icon-up.svg';
 import downIcon from '../Assets/icon-down.svg';
+
+import { SmallGrayText } from '../UI/Container'
+
 import { 
         limeGreen, 
         brightRed,
@@ -106,7 +109,7 @@ export default ({
          <div className="card-content">
             <div className="social-media">
                 <img src={mediaReferences[media].icon} alt={`logo do ${media}`} />
-                <p>{profile}</p>
+                <SmallGrayText>{profile}</SmallGrayText>
             </div>
             <FollowersData>
                 <p className="number">{followersNumber}</p>

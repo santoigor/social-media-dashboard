@@ -4,11 +4,12 @@ import  Toggle from "./Components/Toggle";
 import OverviewCard from "./Components/OverviewCard";
 import { dark, light } from "./UI/Themes"
 
+
 import { GlobalStyle } from "./UI/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import styled from 'styled-components'
 
-import { info } from "./Data";
+import { info, overviewInfo } from "./Data";
 import { useState } from "react";
 
 const Wrapper = styled.div`
@@ -19,7 +20,6 @@ const Wrapper = styled.div`
   
 
   height: 180px;
-  /* background: hsl(225, 100%, 98%); */
   background: ${({theme}) => theme.headerBackground};
 `;
 
@@ -44,6 +44,15 @@ const Subtitle = styled.h2`
 
 const Overview = styled.div`
   position: relative;
+
+  .overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+
+    max-width: 800px;
+    margin: 0 auto;
+  }
 `;
 
 function App() {
@@ -51,7 +60,7 @@ function App() {
   return (
     <ThemeProvider theme={isThemeDark ? dark : light}>
       <GlobalStyle />
-      <Wrapper>
+      {/* <Wrapper>
         <Header>
           <Toggle onClick={ () => setIsThemeDark(!isThemeDark)} isDark={isThemeDark} />
         </Header>
@@ -72,14 +81,25 @@ function App() {
             )
           }
         </FollowersList>
-      </Wrapper>
+      </Wrapper> */}
           
       <Overview>
-          <Subtitle>Overview - Today</Subtitle>
-          <OverviewCard />
-        </Overview>
-
-      
+          {/* <Subtitle>Overview - Today</Subtitle> */}
+          <div className="overview-content">
+            <OverviewCard />
+            { overviewInfo.data.map(({
+              title, 
+              social_media, 
+              number, 
+              percentage}) => <OverviewCard 
+                                title={title} 
+                                social_media={social_media} 
+                                percentage={percentage} 
+                                number={number} />
+              )
+            }
+          </div>
+          </Overview>
       </ThemeProvider>
   );
 }

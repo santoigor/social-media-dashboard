@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { toggleBackgroundGray, toggleBackgroundGradient, grayText } from '../UI/Variables';
+import { SmallGrayText } from '../UI/Container'
+
 
 const Toggle = styled.div`
     display: flex;
@@ -68,15 +70,13 @@ const Toggle = styled.div`
     }
 `;
 
-const NumberFollowers = styled.p`
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
+const Mode = styled(SmallGrayText)`
     color: ${({isDark, theme}) => isDark ?  theme.primaryTextColor : grayText};
 `;
+
 export default ({isDark, ...rest}) => (
     <Toggle isDark={isDark}>
-        <NumberFollowers isDark={isDark}>Dark mode</NumberFollowers>
+        <Mode isDark={isDark}>Dark mode</Mode>
         <label className="switch">
             <input type="checkbox" {...rest}/>
             <span className="slider round"></span>

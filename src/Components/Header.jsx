@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SmallGrayText } from '../UI/Container'
 
 const Header = styled.header`
     display: flex;
@@ -22,20 +23,15 @@ const Title = styled.h1`
     font-weight: 700;
     color: ${({theme}) => theme.primaryTextColor};
 `;
-const NumberFollowers = styled.p`
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: hsl(228, 12%, 44%);
-`;
 
-export default ({children, isDark}) => {
+
+export default ({children}) => {
     return(
         <Header>
             <div className="header-content">
                 <div>
                     <Title>Social Media Dashboard</Title>
-                    <NumberFollowers>Total followers: 23,004</NumberFollowers>
+                    <SmallGrayText>Total followers: 23,004</SmallGrayText>
                 </div>
                {children}
             </div>
