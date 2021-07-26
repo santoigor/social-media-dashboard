@@ -47,6 +47,14 @@ const Toggle = styled.div`
         transition: .4s;
     }
 
+    @media(max-width: 600px){
+        .slider:before {
+            height: 13px;
+            width: 13px;
+            left: 1px;
+        }
+    }
+
     input:checked + .slider {
         background: ${toggleBackgroundGradient};
     }

@@ -12,9 +12,10 @@ import styled from 'styled-components'
 import { grayText } from './UI/Variables';
 import { Container } from './UI/Container';
 import { info, overviewInfo } from "./Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
+
   height: 160px;
   background: ${({theme}) => theme.headerBackground};
   border-radius: 0 0 25px 25px;
@@ -24,26 +25,60 @@ const FollowersList = styled.section`
   display: flex;
   gap: 23px;
 
+  @media(max-width: 600px) {
+
+    flex-direction: column; 
+    align-items: center;
+    
+  }
+
+
 `;
 
 const Subtitle = styled.h2`
   font: 700 16px 'Inter', sans-serif;
   color: ${({isDark, theme}) => isDark ?  theme.primaryTextColor : grayText};
-  padding: 40px 0 15px 0;
+  padding: 30px 0 15px 0;
 
 `;
 
 const Overview = styled.div`
 
+  @media(max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
   .overview-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
+
+    @media(max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
   }
 `;
 
 function App() {
   const [ isThemeDark, setIsThemeDark ] = useState(false);
+
+  useEffect(() => {
+ 
+    if(localStorage.getItem('darkTheme') === "true") {
+      setIsThemeDark(true);
+    }
+  }, []);
+
+  function setTheme(){
+    setIsThemeDark(!isThemeDark);
+    localStorage.setItem('darkTheme', !isThemeDark);
+  }
+
   return (
     <ThemeProvider theme={isThemeDark ? dark : light}>
       <GlobalStyle />
@@ -51,7 +86,7 @@ function App() {
       <Wrapper>
       <Container>
         <Header>
-          <Toggle onClick={ () => setIsThemeDark(!isThemeDark)} isDark={isThemeDark} />
+          <Toggle onClick={setTheme} isDark={isThemeDark} checked={isThemeDark} />
         </Header>
         </Container>
         <Container>
@@ -90,7 +125,6 @@ function App() {
           </Overview>
           </Container>
       </Wrapper>
-     
       </ThemeProvider>
   );
 }

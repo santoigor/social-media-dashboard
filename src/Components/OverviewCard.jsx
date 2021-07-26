@@ -58,6 +58,21 @@ const Card = styled.div`
     &:hover {
         filter: brightness(0.9);
     }
+
+    @media(max-width: 600px) {
+        width: 80vw;
+        height: 15vh;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+    }
 `;
 
 export default ({
@@ -66,7 +81,7 @@ export default ({
     percentage,
     number
 }) => {
-    console.log(mediaReferences[social_media]?.icon);
+   
     return(
         <Card>
             <div className='row'>

@@ -40,7 +40,11 @@ const Rectangle = styled.div`
     height: 3px;
     background: ${ ({media}) => mediaReferences[media].color };
     border-top-left-radius: 2px; 
-    border-top-right-radius: 2px; 
+    border-top-right-radius: 2px;
+
+    @media(max-width: 600px) {
+        width: 80vw;
+    }
 `;
 const Card = styled.div`
     border-radius: 5px;
@@ -71,7 +75,13 @@ const Card = styled.div`
     &:hover {
         filter: brightness(0.9);
     };
+
+    @media(max-width: 600px) {
+        width: 80vw;
+    }
 `;
+
+
 const FollowersData = styled.div`
     display: flex;
     align-items: center;
