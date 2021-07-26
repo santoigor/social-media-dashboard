@@ -38,10 +38,10 @@ const mediaReferences = {
 const Card = styled.div`
     background: ${({theme}) => theme.cardBackground};
     border-radius: 5px;
-    padding: 10px;
-
+   
     width: 100%;
-    max-width: 500px;
+    width: 180px;
+    cursor: pointer;
 
     .row {
         display: flex;

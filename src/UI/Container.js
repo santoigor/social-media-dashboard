@@ -5,6 +5,12 @@ import {
     brightRed,
 } from '../UI/Variables'
 
+export const Container = styled.div`
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+`;
+
 export const SmallGrayText = styled.p`
     font-family: 'Inter', sans-serif;
     font-size: 12px;

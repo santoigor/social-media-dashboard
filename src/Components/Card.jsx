@@ -43,7 +43,6 @@ const Rectangle = styled.div`
     border-top-right-radius: 2px; 
 `;
 const Card = styled.div`
-    border: 0;
     border-radius: 5px;
 
     background: ${({theme}) => theme.cardBackground};
@@ -51,7 +50,7 @@ const Card = styled.div`
     cursor: pointer;
 
     .card-content {
-        padding: 20px;
+        padding: 15px;
         display: flex;  
         align-items: center;
         flex-direction: column;
@@ -61,6 +60,11 @@ const Card = styled.div`
             gap: 10px;
             font-size: 12px;
             color: ${grayText};
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
         }
     }
 

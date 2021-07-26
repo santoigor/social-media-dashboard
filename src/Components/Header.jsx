@@ -4,16 +4,12 @@ import { SmallGrayText } from '../UI/Container'
 const Header = styled.header`
     display: flex;
     justify-content: center;
-    align-items:  flex-start;
-    width: 100%;
-    padding: 20px;
+    padding: 25px 0 30px 0;
 
     .header-content {
         width: 100%;
-        max-width: 800px;
         display: flex;
         justify-content: space-between;
-        margin-top: 35px;
     }
 `;
 

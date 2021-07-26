@@ -9,49 +9,36 @@ import { GlobalStyle } from "./UI/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import styled from 'styled-components'
 
+import { grayText } from './UI/Variables';
+import { Container } from './UI/Container';
 import { info, overviewInfo } from "./Data";
 import { useState } from "react";
 
 const Wrapper = styled.div`
-  position: relative;
-
-  display: flex;
-  justify-content: space-around;
-  
-
-  height: 180px;
+  height: 160px;
   background: ${({theme}) => theme.headerBackground};
+  border-radius: 0 0 25px 25px;
 `;
 
 const FollowersList = styled.section`
-  position: absolute;
-  top: 130px;
-
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 23px;
 
 `;
 
 const Subtitle = styled.h2`
   font: 700 16px 'Inter', sans-serif;
-  color: hsl(228, 34%, 66%);
-  position: absolute;
-  top: 150px;
-  left: 110px;
+  color: ${({isDark, theme}) => isDark ?  theme.primaryTextColor : grayText};
+  padding: 40px 0 15px 0;
 
 `;
 
 const Overview = styled.div`
-  position: relative;
 
   .overview-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-
-    max-width: 800px;
-    margin: 0 auto;
+    grid-gap: 10px;
   }
 `;
 
@@ -60,10 +47,14 @@ function App() {
   return (
     <ThemeProvider theme={isThemeDark ? dark : light}>
       <GlobalStyle />
+     
       <Wrapper>
+      <Container>
         <Header>
           <Toggle onClick={ () => setIsThemeDark(!isThemeDark)} isDark={isThemeDark} />
         </Header>
+        </Container>
+        <Container>
         <FollowersList>
           {
             info.data.map(({
@@ -81,26 +72,25 @@ function App() {
             )
           }
         </FollowersList>
-      </Wrapper>
-          
-      <Overview>
-          <Subtitle>Overview - Today</Subtitle>
+        <Overview>
+          <Subtitle isDark={isThemeDark}>Overview - Today</Subtitle>
           <div className="overview-content">
             { overviewInfo.data.map(({
               title, 
               social_media, 
               number, 
-              percentage}) => {
-              console.log(title, social_media);
-              return <OverviewCard 
+              percentage}) => <OverviewCard 
                                 title={title} 
                                 social_media={social_media} 
                                 percentage={percentage} 
-                                number={number} />}
+                                number={number} />
               )
             }
           </div>
           </Overview>
+          </Container>
+      </Wrapper>
+     
       </ThemeProvider>
   );
 }
