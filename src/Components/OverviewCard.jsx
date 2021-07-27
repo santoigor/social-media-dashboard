@@ -42,6 +42,7 @@ const Card = styled.div`
     width: 100%;
     width: 180px;
     cursor: pointer;
+    margin-bottom: 15px;
 
     .row {
         display: flex;
