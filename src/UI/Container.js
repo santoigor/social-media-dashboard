@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const SmallGrayText = styled.p`
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 700;
     color: hsl(228, 12%, 44%);
 `;
