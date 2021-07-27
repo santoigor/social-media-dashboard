@@ -1,4 +1,8 @@
+
 # Social Media Dashboard
+
+![desktop-preview](https://user-images.githubusercontent.com/86170894/127077481-7ae54fa6-6277-4423-92a8-840db02496aa.jpg)
+
 
 ## 💻 Descrição
 <p>O Social Media Dashboard é um projeto que criei para exercitar meus conhecimentos com styled components.</p> 
